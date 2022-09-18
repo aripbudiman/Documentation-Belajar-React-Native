@@ -4,7 +4,7 @@
 
 
 ##  Penggunaan SVG
-####bahan / link instalation:
+#### bahan / link instalation:
 
  [![React-native-svg](https://img.shields.io/badge/ReactNativeSVG-Docs-teal.svg)](https://github.com/react-native-svg/react-native-svg)
 
