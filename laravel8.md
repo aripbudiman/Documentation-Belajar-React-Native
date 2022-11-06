@@ -39,3 +39,43 @@ public function changeStatus(Request $request,$id,$status){
 
 
 ----------
+
+
+### Multi Role & Permission dengan LARAVEL
+
+pertama setelah melakukan instalalsi laravel nya, lalu instal laravel spatie:
+```php
+composer show spatie/laravel-permission
+```
+lalu ketik:
+```php
+artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+```
+lalu lakukan migration:
+```php
+php artisan migrate
+```
+pada model `user` tambahkan `use HasRole` yang diambil dari `use Spatie\Permission\Traits\HasRole;`
+
+lalu buat file `seeder`
+```php
+php artisan make:seeder RoleSeeder
+```
+pada role seeder tambahkan data
+
+```php
+use Spatie\Permission\Models\Role;
+```
+pada method `run` tambahkan data:
+```php
+public function run(){
+    Role::create([
+        'name'=>'admin',
+        'guard-name'=>'web'
+    ]);
+    
+    Role::create([
+        'name'=>'user',
+        'guard-name'=>'web'
+    ]);
+}
